@@ -1,3 +1,9 @@
+---
+noteId: "3417d980d9f111f1822ff5e8d39c3dcc"
+tags: []
+
+---
+
 <p align="center">
   <img src="figures/sentinelle-logo.svg" alt="Sentinelle – Détection du harcèlement" width="360">
 </p>
@@ -124,6 +130,16 @@ Données : [Kaggle – Cyberbullying and Harassment Detection using ML](https://
 ---
 
 ## MongoDB
+
+### Cluster en production (MongoDB Atlas)
+
+Cluster **CyberBullying** : offre gratuite M0, MongoDB 8.0, **AWS Paris (eu-west-3)**, replica set de 3 nœuds (1 primaire, 2 secondaires). Après le premier démarrage de l'API, la base contient environ **720 Ko** de données : les 5 760 messages et l'historique des prédictions.
+
+![Vue d'ensemble du cluster Atlas](figures/atlas_cluster_overview.png)
+
+**Accès réseau** : l'entrée `0.0.0.0/0` (commentaire *Render*) autorise le service Render, dont l'adresse IP n'est pas fixe sur l'offre gratuite. La base reste protégée par l'utilisateur et le mot de passe contenus dans `MONGO_URI`.
+
+![Liste d'accès IP Atlas](figures/atlas_network_access.png)
 
 ### Base et collections
 
